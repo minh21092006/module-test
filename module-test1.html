@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        h2,td{
+            text-align: center;
+        }
+        th{
+            padding: 10px;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h2>Products List</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Product ID</th>
+                <th>Imagine</th>
+                <th>Product Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Description</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody id="productList">
+        </tbody>
+    </table>
+    <p id="numofProducts"></p>
+    <form id="productForm">
+        <input type="text"  id="productId" placeholder="Product ID" required></br>
+        <input type="text" id="productImage" placeholder="Imagine Link"></br>
+        <input type="text" id="productName" placeholder="Product Name" required></br>
+        <input type="text" id="price" placeholder="Price" required></br>
+        <input type="number" id="quantity" placeholder="Quantity" required></br>
+        <input type="text" id="description" placeholder="Description"></br>
+        <button type="submit">Add Product</button>
+    </form>
+    <script src="module-test1.js"></script>
+</body>
+</html>
