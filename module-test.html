@@ -3,25 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Products Management</title>
     <style>
-        table,th,td{
-            border: 1px solid black;
-            border-collapse: collapse;
+        body{
+            font-family:Arial, Helvetica, sans-serif ;
         }
-        h2,td{
-            text-align: center;
+        .container{
+            margin: 10px auto;
         }
-        th{
-            padding: 10px;
+        .category-bar{
+            display:flex;
+            align-items:center;
+        }
+        .category-bar h3{
+            margin-right:20px;
         }
         table{
             width: 100%;
+            margin-bottom: 16px;
+        }
+        th{
+            background: lightgray;
+        }
+        table,th,td{
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+            text-align: center;
+        }
+        input{
+            padding: 5px;
+            margin: 4px 0;
+            width: 150px;
+        }
+        button{
+            height:30px;
         }
     </style>
 </head>
 <body>
-    <h2>Products List</h2>
+    <div class="container">
+        <input type="text" id="newCategory" placeholder="New Category">
+        <button onclick="addCategory()">Add Category</button>
+    </div>
+    <div class="category-bar">
+        <h3>Categories</h3>
+        <select id="categories" onchange="displayProducts()">
+            <option value="Fruits">Fruits</option>
+            <option value="Foods">Foods</option>
+        </select>
+    </div>
+    <h2 style="text-align: center;">Products List</h2>
     <table>
         <thead>
             <tr>
@@ -39,7 +71,7 @@
         </tbody>
     </table>
     <p id="numofProducts"></p>
-    <form id="productForm">
+    <form id="productForm" onsubmit="addProduct(event)">
         <input type="text"  id="productId" placeholder="Product ID" required></br>
         <input type="text" id="productImage" placeholder="Imagine Link"></br>
         <input type="text" id="productName" placeholder="Product Name" required></br>
@@ -48,6 +80,6 @@
         <input type="text" id="description" placeholder="Description"></br>
         <button type="submit">Add Product</button>
     </form>
-    <script src="module-test1.js"></script>
+    <script src="module-test2.js"></script>
 </body>
 </html>
